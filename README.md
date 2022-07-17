@@ -27,8 +27,6 @@ Certifique-se de que em sua máquina esteja instalado os seguintes programas:
 
 ## Desenvolvimento
 
-> Nesta parte o projeto já deve estar clonado em sua máquina e se encontra na raiz do projeto.
-
 **obs**: O pip usado em comandos é o pip3, e o python é o python3. O que foi feito é somente um link simbolico para
 agilizar o comando
 
@@ -44,6 +42,7 @@ agilizar o comando
     ```
     pip install -r requirements.txt
     ```
+1. Crie o arquivo `backend/db.ini` baseado no `backend/db.ini.modelo` e ajuste suas variaveis
 1. Pronto, seu projeto pode ser executado
 
 ## Api
