@@ -2,9 +2,9 @@ import warnings
 from sqlalchemy.exc import SAWarning
 from sqlmodel import Session, create_engine
 from sqlmodel.sql.expression import Select, SelectOfScalar
-from config import config_local, dir_path
+from backend.config import config_local, dir_path
 
-import models
+from backend import models
 
 warnings.filterwarnings("ignore", category=SAWarning)
 SelectOfScalar.inherit_cache = True
