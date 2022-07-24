@@ -8,7 +8,7 @@ from backend.database import get_session
 from backend.models import UserModel
 from backend.serializers import UserModelSerializer
 
-app = FastAPI(title='FeiiBank')
+app = FastAPI(title='FeiiBank', version=1.0, description='Uma api criada com o intuito de auxiliar clientes do feiibank')
 
 @app.get("/")
 async def root():
