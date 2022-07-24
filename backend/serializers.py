@@ -5,6 +5,26 @@ from fastapi import HTTPException, status
 
 
 class UserModelSerializer(BaseModel):
+    """
+    Classe usada para representar usuário
+
+    Attributes
+    --------------------
+    name: str
+        Nome do cliente
+
+    username: str
+        Nickname único que vai ser usado pelo cliente
+
+    cpf: str
+        CPF do cliente
+
+    email: str
+        Email do cliente
+
+    password: str
+        Senha do cliente
+    """
     name: str
     username: str
     cpf: str

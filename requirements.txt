@@ -4,3 +4,4 @@ pydantic==1.9.1
 sqlmodel~=0.0.6
 configparser~=5.2.0
 SQLAlchemy~=1.4.39
+starlette~=0.19.1

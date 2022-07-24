@@ -1,10 +1,14 @@
-from fastapi import FastAPI, Response, status
+from typing import List
+
+from fastapi import FastAPI, Response, status, HTTPException
+from sqlmodel import select
+from backend.core import get_users
+
 from backend.database import get_session
 from backend.models import UserModel
 from backend.serializers import UserModelSerializer
 
 app = FastAPI(title='FeiiBank')
-
 
 @app.get("/")
 async def root():
@@ -21,3 +25,14 @@ async def add_users(users: UserModelSerializer, response: Response) -> UserModel
         session.commit()
         session.refresh(user)
     return user
+
+@app.get('/users', response_model=List[UserModel], status_code=status.HTTP_200_OK)
+def list_users():
+    """Get a list of users """
+    users = get_users()
+    if len(users) == 0:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail='Users not found'
+        )
+    return users
